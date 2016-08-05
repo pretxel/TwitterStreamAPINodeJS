@@ -20,7 +20,7 @@ let connection = mysql.createConnection({
 connection.connect();
 
 //Config filter
-let stream = T.stream('statuses/filter', { track: '#FelizJueves', language: 'es' })
+let stream = T.stream('statuses/filter', { track: '#BuenViernes', language: 'es' })
 
 //Listener Stream
 stream.on('tweet', (tweet)  => {

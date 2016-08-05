@@ -1,4 +1,4 @@
-# TwitterAPINodeJS
+# Twitter Stream API NodeJS
 
 Implementation of Twitter Stream API and then store on MySQL.
 
@@ -11,6 +11,9 @@ Run the below script
 ```javascript
 npm install
 ```
+
+Import schema database twitter_stream.sql on MySQL
+
 
 ## Run project
 ```javascript

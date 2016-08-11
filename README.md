@@ -1,19 +1,15 @@
-# Twitter Stream API NodeJS
+# Twitter Stream API NodeJS and Socket.io
 
-Implementation of Twitter Stream API and then store on MySQL.
+Implementation of Twitter Stream API and then show them with socket.io.
 
 ## Dependences
-MySQL 5.5
-NodeJS 5.1.0
+NodeJS 4.2.0 (LTS)
 
 ## Installation
 Run the below script
 ```javascript
 npm install
 ```
-
-Import schema database twitter_stream.sql on MySQL
-
 
 ## Run project
 ```javascript

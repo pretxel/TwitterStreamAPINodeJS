@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>Socket.IO Twitter</title>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+
+</head>
+<body>
+
+  <div class="ui main text container">
+    <h1>Streaming API Twitter with NodeJS and Socket.io</h1>
+    <div class="ui feed" id="tweets">
+    </div>
+  </div>
+
+</body>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+<script>
+let socket = io();
+
+let tweetDOM = function(image, user_name, text, timestamp){
+
+
+  return "<div class='event'>" +
+  "<div class='label'> " +
+  "<img src='"+image+"'> " +
+  "</div> " +
+  "<div class='content'> " +
+  "<div class='summary'> " +
+  "<a class='user'> " +
+  user_name +
+  "</a> said " +
+  "<div class='date'> " +
+  timestamp +
+  "</div> " +
+  " <div class='extra text'>" +
+  text +
+  "</div>"
+  "</div> " +
+  "<div class='meta'> " +
+  "<a class='like'> " +
+  "<i class='like icon'></i> 4 Likes " +
+  "</a> " +
+  "</div> " +
+  "</div> " +
+  "</div>";
+};
+
+
+socket.on('twitter', function(msg){
+  $("#tweets").append(tweetDOM(msg.profile_image_url, msg.screen_name, msg.text, msg.timestamp_ms))
+});
+
+</script>
+</html>
